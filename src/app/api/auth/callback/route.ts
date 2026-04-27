@@ -12,7 +12,7 @@ export async function GET(req: Request) {
   }
 
   const response = await fetch(
-    `https://graph.facebook.com/v19.0/oauth/access_token?client_id=${process.env.INSTAGRAM_APP_ID}&client_secret=${process.env.INSTAGRAM_APP_SECRET}&redirect_uri=${process.env.INSTAGRAM_REDIRECT_URI}&code=${code}`
+    `https://graph.facebook.com/v19.0/oauth/access_token?client_id=${process.env.FACEBOOK_APP_ID}&client_secret=${process.env.FACEBOOK_APP_SECRET}&redirect_uri=${process.env.FACEBOOK_REDIRECT_URI}&code=${code}`
   );
 
   const data = await response.json();

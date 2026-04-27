@@ -18,8 +18,8 @@ export default function LoginButton() {
   const handleLogin = () => {
     const url =
       `https://www.facebook.com/v19.0/dialog/oauth` +
-      `?client_id=${process.env.NEXT_PUBLIC_INSTAGRAM_APP_ID}` +
-      `&redirect_uri=${process.env.NEXT_PUBLIC_INSTAGRAM_REDIRECT_URI}` +
+      `?client_id=${process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}` +
+      `&redirect_uri=${process.env.NEXT_PUBLIC_FACEBOOK_REDIRECT_URI}` +
       `&scope=instagram_content_publish,pages_show_list` +
       `&response_type=code`;
 
@@ -64,7 +64,7 @@ export default function LoginButton() {
   return (
     <div className="p-5">
       <Button variant="outline" onClick={handleLogin} disabled={status === "waiting"}>
-        {status === "waiting" ? "Waiting for login..." : "Login using Instagram"}
+        {status === "waiting" ? "Waiting for login..." : "Login using FaceBook"}
       </Button>
       {status === "error" && <p className="mt-2 text-sm text-red-600">Login failed. Try again.</p>}
     </div>
